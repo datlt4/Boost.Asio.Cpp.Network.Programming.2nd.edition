@@ -6,6 +6,7 @@
 
 [<img src= "Assets/network-architecture.png" alignment="center">]()
 
+---
 # The OSI reference model
 
 - **OSI model** được sử dụng để kết nối các open system mà không phụ thuộc vào hệ điều hành.
@@ -39,6 +40,7 @@
 - **Session layer** cũng đảm bảo rằng dữ liệu từ một ứng dụng khác không bị thay thế cho nhau. Ví dụ: nếu chúng tôi chạy trình duyệt Internet, ứng dụng trò chuyện và trình quản lý tải xuống cùng một lúc, **session layer** sẽ chịu trách nhiệm thiết lập các **session** cho mọi ứng dụng và đảm bảo rằng chúng vẫn tách biệt với các ứng dụng khác.
 - Có ba phương pháp giao tiếp được sử dụng bởi lớp này: **simplex**, **half-duplex** hoặc **full-duplex**. Trong **simplex**, dữ liệu chỉ có thể được chuyển bởi một bên, vì vậy bên kia không thể chuyển bất kỳ dữ liệu nào. Phương pháp này không còn được sử dụng phổ biến nữa, vì chúng ta cần các ứng dụng có thể tương tác với nhau. Trong **half-duplex**, bất kỳ dữ liệu nào cũng có thể được chuyển đến tất cả các thiết bị liên quan, nhưng chỉ một thiết bị có thể chuyển dữ liệu một lúc. **Full-duplex** có thể truyền dữ liệu đến tất cả các thiết bị cùng một lúc. Để gửi và nhận dữ liệu, phương pháp này sử dụng các đường dẫn khác nhau.
 
+<<<<<<< HEAD
 ## The Presentation layer
 
 - Vai trò của **Presentation layer** được sử dụng để xác định dữ liệu đã được gửi, dịch dữ liệu sang định dạng thích hợp, sau đó biểu diễn dữ liệu.-
@@ -61,3 +63,9 @@ Hơn nữa, lớp này chịu trách nhiệm nén và giải nén dữ liệu v�
 - [**Khối thông báo máy chủ (SMB)**](The_Server_Message_Block): Giao thức này là một FTP được sử dụng trên Mạng của Microsoft chủ yếu để chia sẻ tệp và máy in.
 
 - **Application layer** cũng quyết định xem tài nguyên mạng có đủ cho truy cập. Ví dụ, nếu bạn muốn lượt Internet bằng trình duyệt, Application layer quyết định Internet có khả dụng cho HTTP không.
+
+---
+
+=======
+## The Presentation layer
+>>>>>>> main

@@ -100,7 +100,7 @@ int main(void)
 ## Wrapping a function invocation
 
 ```cpp
-/* uncalledbind.cpp */
+/* calledbind.cpp */
 #include <boost/bind.hpp>
 #include <iostream>
 #include <string>
@@ -146,7 +146,7 @@ int main(void)
 ## Working with the `Boost.Bind` library
 
 - Cho đến nay, ta đã có thể sử dụng `boost::bind` cho các global và class functions. Tuy nhiên, khi ta sử dụng đối tượng `io_service` với `boost::bind`, ta sẽ gặp lỗi **non-copyable error** vì không thể sao chép đối tượng `io_service`.
-- Bây giờ, ta hãy xem xét lại multithreads.cpp. ta sẽ sửa đổi mã để giải thích việc sử dụng `boost::bind` cho đối tượng `io_service` và ta sẽ vẫn cần sự trợ giúp của con trỏ `shared_ptr`. Hãy xem đoạn mã sau:
+- Bây giờ, ta hãy xem xét lại multithreads.cpp. ta sẽ sửa đổi code để giải thích việc sử dụng `boost::bind` cho đối tượng `io_service` và ta sẽ vẫn cần sự trợ giúp của con trỏ `shared_ptr`. Hãy xem đoạn code sau:
 
 ```cpp
 /* ioservicebind.cpp */
@@ -231,7 +231,7 @@ int main(void)
 
 ## Using the `post()` function
 
-- Hãy kiểm tra hàm `post()` bằng cách tạo đoạn mã sau. ta sẽ sử dụng tệp `mutexbind.cpp` làm mã cơ sở của mình, vì ta sẽ chỉ sửa đổi mã nguồn:
+- Hãy kiểm tra hàm `post()` bằng cách tạo đoạn code sau. ta sẽ sử dụng tệp `mutexbind.cpp` làm code cơ sở của mình, vì ta sẽ chỉ sửa đổi code nguồn:
 
 ```cpp
 /* post.cpp */
@@ -299,7 +299,7 @@ int main(void)
 
 ## Using the `dispatch()` function
 
-- Bây giờ, hãy kiểm tra hàm `dispatch()` để cung cấp cho hàm `io_service` một số `work`. ta sẽ vẫn sử dụng tệp `mutexbind.cpp` làm mã cơ sở của mình và ta sẽ sửa đổi nó một chút để nó trở thành như thế này:
+- Bây giờ, hãy kiểm tra hàm `dispatch()` để cung cấp cho hàm `io_service` một số `work`. ta sẽ vẫn sử dụng tệp `mutexbind.cpp` làm code cơ sở của mình và ta sẽ sửa đổi nó một chút để nó trở thành như thế này:
 
 ```cpp
 /* dispatch.cpp */

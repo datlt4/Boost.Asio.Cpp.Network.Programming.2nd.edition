@@ -4,4 +4,8 @@
 
 ## Chapter 2: [Understanding the Networking Concepts](Understanding-the-Network-Concept.md)
 
-## Chapter 3: [Getting Started with Boost.Asio](Getting-Started-with-Boost-Asio.md)
+## Chapter 3: Introducing the Boost C++ Libraries
+
+## Chapter 4: [Getting Started with Boost.Asio](Getting-Started-with-Boost-Asio.md)
+
+## Chapter 5: [Delving into the Boost.Asio Library](Delving-into-the-Boost.Asio-Library.md)

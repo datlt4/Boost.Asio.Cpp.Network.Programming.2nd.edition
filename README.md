@@ -9,3 +9,5 @@
 ## Chapter 4: [Getting Started with Boost.Asio](Getting-Started-with-Boost-Asio.md)
 
 ## Chapter 5: [Delving into the Boost.Asio Library](Delving-into-the-Boost.Asio-Library.md)
+
+## Chapter 6: [Creating a Client-server Application](Creating-a-Client-server-Application.md)

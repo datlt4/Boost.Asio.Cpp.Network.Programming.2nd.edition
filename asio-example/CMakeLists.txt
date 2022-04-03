@@ -4,3 +4,4 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_subdirectory("chapter-4")
 add_subdirectory("chapter-5")
+add_subdirectory("chapter-6")

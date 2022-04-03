@@ -397,6 +397,44 @@ Từ đoạn mã trước, chúng ta có thể thấy rằng chương trình g�
 
 - Chúng tôi sẽ tạo một chương trình **server** sẽ phản hồi tất cả lưu lượng mà nó truy xuất từ **client**. Trong trường hợp này, chúng tôi sẽ sử dụng `telnet` làm **client**, như chúng tôi đã làm trước đây. Tệp phải được lưu dưới dạng echoserver.cpp và nội dung sẽ giống như sau:
 
+[**_Code_**](chapter-6/echoserver.cpp)
+
+The first time we run the program, it will listen to port 8000 in localhost. We can see in the main block that the program calls the `poll()` function in the Hive class if there is no keyboard hit. This means that the program will close if any key is pressed because it will invoke the `Stop()` function in the Hive class, which will stop the io_service object. Every 1000 milliseconds, the timer will tick because the constructor of the Acceptor class initiates the interval of the timer for 1000 milliseconds.
+
+Now, open another console window and type the command `telnet 127.0.0.1 8000` to make telnet our client. After the echoserver accepts the connection, every time we press the alphanumeric option on the keyboard, the echoserver will send the character back to telnet.
+
+When the server accepts the connection from the client, the `OnAccept()` function handler will be invoked immediately. I pressed the A, B, and C keys respectively in the telnet window, and then echoserver received the characters and sent them back to the client. The telnet window also displays A, B, and C.
+
+## Creating a simple client program
+
+- Now, we will move on to develop the client-side program. It will receive the content of the Packt Publishing website through the `HTTP GET` command, and the code will be like the following:
+
+- Just after the connection is established, the program sends an HTTP GET command to port `80` of `www.packtpub.com` using the following code snippet:
+
+```cpp
+std::string str = "GET / HTTP/1.0\r\n\r\n";
+std::vector<uint8_t> request;
+std::copy(str.begin(), str.end(), std::back_inserter(request));
+Send(request)
+```
+
+It then sends the request to the socket using the `Send()` function in the `Connection` class inside the code of the `wrapper.cpp` file. The code snippet of the `Send()` function is as follows:
+
+```cpp
+m_io_strand.post(boost::bind(&Connection::DispatchSend, 
+shared_from_this(), buffer));
+```
+
+- As we can see, we use the strand object in order to allow all events to be serially run. In addition, because of the strand object, we do not have to use the lock object every time the event occurs.
+
+- After the request is sent, the program will pool the incoming data using the following code snippet:
+
+```cpp
+m_io_service.poll();
+```
+
+- Then, once the data is coming, it will be displayed in the console by the `OnRecv()` function handler, as we can see in the preceding image.
+
 # Summary
 
 - There are three basic steps when it comes to developing a network application. The first step includes establishing a connection between the source and target, which means the **client** and **server**. We can configure the `socket` object along with the `acceptor` object to establish the connection.
